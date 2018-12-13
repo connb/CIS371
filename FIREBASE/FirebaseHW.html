@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Friends Database</title>
+  <meta name="description" content="Firebase Homework CIS 371">
+  <meta name="author" content="Brandon Conn">
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDOsSkEbWSkTROPMIaCm_DCjSjehywvRhs",
+    authDomain: "fir-hw-c97a6.firebaseapp.com",
+    databaseURL: "https://fir-hw-c97a6.firebaseio.com",
+    projectId: "fir-hw-c97a6",
+    storageBucket: "fir-hw-c97a6.appspot.com",
+    messagingSenderId: "564722906422"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="./script.js"></script>
+
+<body>
+    <div class='container'>
+        <!-- <div class='left'> -->
+            <div class='upload child'>
+                <input id='upload' type='file'>
+                <button onclick='processUpload()'>Upload</button>
+            </div>
+            <div id='newEntry' class='child'>
+                <label for='name'><b>Name</b></label>
+                <input type='text' name='name' size="40" placeholder='Capitalize First Letter of each name' required pattern='[A-Z]{1}[a-z]+( [A-Z]{1}[a-z]*)? [A-Z]{1}[a-z]+'><br>
+
+                <label for='phone'><b>Phone</b></label>
+                <input type='tel' name='phone' size="40" placeholder='7 or 10 digit number (No spaces or hyphens)' required pattern='(^\d{7}$|^\d{10}$)'><br>
+
+                <label for='age'><b>Age</b></label>
+                <input type='number' name='age' placeholder='0-99' required pattern='(^\d{1}$|^\d{2}$)'><br>
+
+                <input type='button' value='Upload' onclick='newEntry()'>
+            </div>
+
+            <div class='table child'>
+                <table id='table'>
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Age</th>
+                        </tr>
+                    </tbody>
+                </table>
+                <button onclick='deleteAll()'>Delete all</button>
+            </div>
+        <!-- </div> -->
+        <!-- <div class='right'> -->
+            <div>
+                <div class='child'>
+                    <input type='search' name='search' id='searchQuery'>
+                    <input type='button' value='Search' onclick='search()'>
+                </div>
+
+                <div class="child">
+                    <table id='searchTable'>
+                        <tbody>
+                            <tr>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Age</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        <!-- </div> -->
+    </div>
+</body>
+</html>

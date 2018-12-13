@@ -1,0 +1,82 @@
+* {
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+h3 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+#businessName {
+    text-align: center;
+    color: blue;
+}
+
+#table {
+    margin: auto;
+    padding: 10px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+#table td, th {
+    padding: 10px;
+}
+
+#table tr:nth-child(even) {
+    background-color: gainsboro;
+}
+
+#formHeader {
+    text-align: center;
+}
+
+#back {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    padding: 6px;
+    border: 1px solid blue;
+}
+
+#search {
+    width: 700px;
+    margin: 0 auto;
+    margin-bottom: 55px;
+}
+
+#search input[type="text"] {
+    width: 200px;
+}
+
+#search input[type="submit"] {
+    width: auto;
+}
+
+#submitButtons {
+    text-align: center;
+}
+
+#confirm{
+    width: 100px;
+    margin: 0px 10px;
+    display: inline-block;
+}
+
+#cancel {
+    width: 100px;
+    margin: 0px 10px;
+    display: inline-block;
+}
+
+#confirm input:hover {
+    cursor: pointer;
+} 
+
+#cancel input:hover {
+    cursor: pointer;
+}
+
+#checked-out {
+    text-align: center;
+}

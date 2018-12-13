@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vue Tutorial</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <style>
+    * {font-family: roboto, monospace}
+    td {padding-left: 10px}
+    td {padding-right: 10px}
+    th {padding-left: 10px}
+    th {padding-right: 10px}
+    h1 {text-align: center; font-size: 300%}
+  </style>
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-content>
+            <v-container fluid fill-height grey lighten-3 pa-4>
+                <v-layout column>
+                    <h1 class="grey lighten-1">Random User Generator</h1>
+                    <v-flex >
+                        <v-layout id="controls" grey lighten-1 justify-center row pa-2>
+                            <v-flex xs6 align-center >
+                                <v-slider :label="`Number of users ${userCount}`" v-model="userCount" step="1" max="50" min="1" ></v-slider>
+                            </v-flex>
+                                <v-btn color="success" @click="getUser" fab >
+                                    <v-icon>arrow_forward</v-icon>
+                                </v-btn>
+                        </v-layout>
+                        <!-- <v-layout id="output" row blue lighten-2>
+                            <v-flex xs8>
+                                {{ users }}
+                            </v-flex>
+                            <v-btn color="success" @click="resetUsers">Reset</v-btn>
+                        </v-layout> -->
+
+                        <v-layout id="myTable" column align-center grey lighten-2>
+                            <v-layout column align-center>
+                                    <v-flex>
+                                        <p style="height: 100px"><img v-bind:src="photo"></p>
+                                    </v-flex>
+                            </v-layout>
+                            <v-flex pa-1>
+                                <table>
+                                    <tr>
+                                        <v-flex pa-1>
+                                        <th class="pa-2">First & Last Name</th>
+                                        <th class="pa-2">E-mail</th>
+                                        <th class="pa-2">Username</th>
+                                        <th class="pa-2">Cell Phone</th>
+                                        <th class="pa-2">Date of Birth</th>
+                                        <th class="pa-2">Photo</th>
+                                        </v-flex>
+                                        <v-btn color="success" @click="resetUsers" fab="true" pa-2>
+                                            <v-icon>replay</v-icon>
+                                        </v-btn>
+                                    </tr>
+                                    <template v-for="u in users" pa-5>
+                                        <tr @mouseover="photo=u.picture.large" @mouseleave="photo=''">
+                                            <v-flex pa-2>
+                                            <td class="pa-2">{{u.name.first}} {{u.name.last}}</td>
+                                            <td class="pa-2">{{u.email}}</td>
+                                            <td class="pa-2">{{u.login.username}}</td>
+                                            <td class="pa-2">{{u.cell}}</td>
+                                            <td class="pa-2">{{u.dob.date.substr(0,10)}}</td>
+                                            <td class="pa-2"><img v-bind:src="u.picture.thumbnail"></td>
+                                            </v-flex>
+                                        </tr>
+                                    </template>
+                                </table>
+                            </v-flex>
+                        </v-layout>
+                    </v-flex>
+                </v-layout>
+            </v-container>
+      </v-content>
+    </v-app>
+  </div>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+  <script>
+    new Vue({ 
+        el: '#app',
+        data: {
+            userCount: 1,
+            users: [],
+            photo: "",
+        },
+        methods: {
+            getUser(){
+                fetch(`https://randomuser.me/api?results=${this.userCount}`)
+                    .then(r => r.json())
+                    .then(u => {
+                        this.users = u.results;
+                    })
+            },
+            resetUsers(){
+                this.users = []
+            },
+            increaseRes(){
+                this.photo = u.picture.large;
+            },
+            resetRes(){
+                this.photo = u.picture.thumbnail;
+            },
+        }
+    });
+  </script>
+</body>
+</html>

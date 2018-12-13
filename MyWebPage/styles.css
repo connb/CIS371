@@ -1,0 +1,147 @@
+﻿<link rel="stylesheet" href="styles.css" >
+
+* {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+    color: black;
+    
+}
+
+h1 {
+    color: #2B30C8; /*Dark Blue*/
+    text-align: center;
+}
+
+h3 {
+    color: #1C1C1E; /*Almost Black*/
+}
+
+ol {
+    list-style-type: lower-alpha;
+}
+
+.favorites {
+    background-color: #D5D5E5;
+    width: 180px;
+    height: 110px;
+    padding: 10px;
+}
+
+.inspiration {
+    float: right;
+    width: 600px;
+    text-align: center;
+    margin-bottom: auto;
+}
+
+body > img:first-of-type {
+    float: right;
+    width: 600px;
+    text-align: center;
+    margin-bottom: auto;
+}
+
+.day {
+    background-color: #E5D5D5;
+    width: 350px;
+    height: 230px;
+    padding: 10px;
+}
+
+.courses {
+    table-layout:auto;
+}
+
+.links {
+    background-color: #D5D5E5;
+    width: 170px;
+    height: 140px;
+    padding: 10px;
+}
+
+.latin {
+    background-color: #E5D5D5;
+    width: 160px;
+    height: 110px;
+    padding: 10px;
+}
+
+.best {
+    font-style: italic;
+}
+
+.w3{
+    float: right;
+}
+
+table#mainTable {
+    width: 100%;
+    border: none;
+    margin: 10px;
+    color: black;
+}
+
+table#courseTable {
+    border: 5px ridge #2B30C8;
+    border-radius: 5px;
+}
+
+table p {
+    font-size: small;
+}
+
+#courseTable td:nth-child(odd) {
+    text-align: center;
+}
+
+#courseTable tr:nth-child(odd) {
+    background: #D5D5E5;
+    background-color: #D5D5E5;
+}
+
+#courseTable tr:nth-child(even) {
+    background: #E5D5D5;
+    background-color: #E5D5D5;
+}
+
+#me {
+    float: right;
+    width: 200px;
+    height: 164px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+#mylife {
+    word-wrap: break-word;
+}
+
+#tx {
+    width: 18px;
+    height: 14px;
+}
+
+#va {
+    width: 30px;
+    height: 14px;
+}
+
+#mi {
+    width: 11px;
+    height: 14px;
+}
+
+#feeney {
+    width: 200px;
+    height: 159px;
+}
+
+#coffee {
+    width: 16px;
+    height: 16px;
+}
+
+#w3pic {
+    height: 31px;
+    width: 88px;
+}
